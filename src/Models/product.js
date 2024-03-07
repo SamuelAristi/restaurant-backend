@@ -9,7 +9,7 @@ product.init({
     productId:{
         type: DataTypes.INTEGER,
         primaryKey: true,
-        alloNull: false
+        autoIncrement: true
     },
     productName:{
         type: DataTypes.STRING,

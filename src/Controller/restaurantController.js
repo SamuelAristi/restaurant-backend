@@ -1,4 +1,6 @@
 require('express');
+const city = require('../Models/city');
+const department = require('../Models/department');
 const restaurant = require('../Models/restaurant');
 
 //create restaurant
@@ -12,7 +14,7 @@ async function createRestaurant(req,res){
             cityId:req.body.cityId,
             
         }).then(function(data){
-            return res.status(200).jso({
+            return res.status(200).json({
                 data:data
             })
         }).catch(error =>{
