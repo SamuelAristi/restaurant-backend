@@ -16,16 +16,10 @@ const cityController = require('./Routers/cityRouter.js')
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-connection.sync({force:false})
-    .then(()=>{
-        console.log('base de datos sincronizada');
-        app.listen(port, ()=>{
-            console.log(`La aplicacion esta corriendo en el puerto ${port}`);
-        })
-    })
-    .catch((error)=>{
-        console.error('Erro al sincronizar la base de datos '+ error)
-    });
+app.listen(port, ()=>{
+    console.log(`La aplicacion esta corriendo en el puerto ${port}`);
+});
+
 
     //api
     app.use('/apirestaurant',restaurantRouter);
